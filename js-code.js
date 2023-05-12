@@ -17,6 +17,7 @@ if(!score) //if score is null
 updateScore();
  function pickComputerMove()
  {
+     
     const randomNumber=Math.random();
      // console.log(randomNumber);
      let computerMove='';
@@ -76,6 +77,10 @@ document.body.addEventListener('keydown',(event) =>{
 
  function playGame(playerMove)
  {
+        if (!playerMove) {
+         console.error('Player move not provided');
+        return;
+       }
        const computerMove=pickComputerMove();
        result='';
        if (playerMove==='scissors')
